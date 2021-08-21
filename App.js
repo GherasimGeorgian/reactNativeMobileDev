@@ -57,7 +57,8 @@ export default function App() {
 
          <Text>name:{name},age: {age}</Text>
        </View>
-
+  
+  
 
     {/* <View style={styles.containerList}>
        {
