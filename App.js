@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text, View, Button,TextInput,ScrollView,FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button,TextInput,ScrollView,FlatList,TouchableOpacity } from 'react-native';
 
 export default function App() {
   const [name,setName] = useState('vasile') 
@@ -17,6 +17,13 @@ export default function App() {
   const clickHandler = () =>{
     setName('Kiky')
     setAge(13)
+  }
+
+  const pressHandler = (id) =>{
+    console.log(id);
+    setPeople((prevPeople) =>{
+      return prevPeople.filter(person => person.id != id)
+    })
   }
   //ceva
   return (
@@ -69,8 +76,10 @@ export default function App() {
        keyExtractor={(item) => item.id}
        data={people}
        renderItem={({ item }) => (
+          <TouchableOpacity onPress={()=>pressHandler(item.id)}>
+             <Text style={styles.item}>{item.name}</Text>
+          </TouchableOpacity>
          
-          <Text style={styles.item}>{item.name}</Text>
        )}
        />
      
