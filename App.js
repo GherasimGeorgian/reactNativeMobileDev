@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     margin:10,
     width:200,
   },
+  
   item:{
     marginTop:24,
     padding:30,
