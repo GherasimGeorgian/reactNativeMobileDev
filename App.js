@@ -5,6 +5,7 @@ import Basic from './components/Basic'
 import Header from './components/header'
 import ToDoItem from './components/todoItem';
 import AddTodo from './components/addTodo';
+import Sandbox from './components/sandbox';
 export default function App() {
   const [todos,setTodos] =useState([
     {text:'buy coffee',key:'1'},
@@ -36,6 +37,8 @@ export default function App() {
   } 
 
   return (
+    // <Sandbox />
+    //<Basic />
     <TouchableWithoutFeedback onPress={()=>{
       //console.log('dissmised keyboard')
       Keyboard.dismiss();
@@ -65,10 +68,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content:{
-    padding:40
+    padding:40,
+    backgroundColor:'#ACF6F4',
+    flex:1
   },
   list:{
-    marginTop:20
+    marginTop:20,
+    backgroundColor:'#ACF6F4',
+    
   }
   
 });
