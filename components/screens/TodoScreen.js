@@ -1,18 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { FlatList, StyleSheet, View,Text,Alert,TouchableWithoutFeedback,Keyboard } from 'react-native';
+import {TouchableHighlight, FlatList, StyleSheet, View,Text,Alert,TouchableWithoutFeedback,Keyboard } from 'react-native';
 import Basic from '../Basic'
 import Header from '../header'
 import ToDoItem from '../todoItem';
 import AddTodo from '../addTodo';
 
-export default function ToDoScreen() {
+export default function ToDoScreen({navigation}) {
     const [todos,setTodos] =useState([
       {text:'buy coffee',key:'1'},
       {text:'create an app',key:'2'},
       {text:'play a video game',key:'3'},
     ])
   
+    const clickGotoHome =()=>{
+      navigation.navigate('Home')
+  }
+
     const pressHandler = (key) =>{
       setTodos((prevTodos) =>{
         return prevTodos.filter(todo => todo.key != key)
@@ -44,7 +48,11 @@ export default function ToDoScreen() {
         Keyboard.dismiss();
       }}>
         <View style={styles.container}>
-        <Header />
+
+        <TouchableHighlight onPress = { () => clickGotoHome() }>
+              <Header/>
+      </TouchableHighlight>
+
         <View style={styles.content}>
           <AddTodo submitHandler={submitHandler}/>
           <View style={styles.list}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet,View,Text,Button } from 'react-native'
-export default function ReviewDetails({navigation}) {
+export default function ReviewDetails({ route: { params },navigation  }) {
     
     const pressHandler =() =>{
         //navigation.goBack();
@@ -10,8 +10,8 @@ export default function ReviewDetails({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.titleReviewDet}>Review Details screen</Text>
-            <Text>ID: {navigation.getParam("_id")}</Text>
-            <Text>Title: {navigation.getParam("title")}</Text>
+            <Text>ID: {params.item._id}</Text>
+            <Text>Title: {params.item.title}</Text>
             
             <Button title="go to HomeScreen" onPress={pressHandler}/>
         </View>

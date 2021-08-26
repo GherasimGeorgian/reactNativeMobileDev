@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { StyleSheet,View,Text,Button,FlatList,TouchableOpacity } from 'react-native'
-import { useSelector,connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 
@@ -11,7 +11,7 @@ export default function Home({navigation}) {
     const pressHandler = ()=>{
         navigation.navigate('ToDoScreen')
     }
- 
+    
    
     return (
         <View style={styles.container}>
@@ -22,7 +22,7 @@ export default function Home({navigation}) {
                 keyExtractor={(item, index) =>  'key'+index}
                 data={smurfData}
                 renderItem={({item}) => (
-                    <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails',item)}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails',{item})}>
                         <Text style={{ fontSize: 40, fontWeight: 'bold' }}>{item.title}</Text>
                     </TouchableOpacity>
             )}
