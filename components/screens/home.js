@@ -22,7 +22,9 @@ export default function Home({navigation}) {
                 keyExtractor={(item, index) =>  'key'+index}
                 data={smurfData}
                 renderItem={({item}) => (
-                    <Text style={{ fontSize: 40, fontWeight: 'bold' }}>{item.title}</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails',item)}>
+                        <Text style={{ fontSize: 40, fontWeight: 'bold' }}>{item.title}</Text>
+                    </TouchableOpacity>
             )}
             />
           </View>
