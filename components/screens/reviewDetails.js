@@ -3,7 +3,8 @@ import { StyleSheet,View,Text,Button } from 'react-native'
 export default function ReviewDetails({navigation}) {
     
     const pressHandler =() =>{
-        navigation.goBack();
+        //navigation.goBack();
+        navigation.navigate("Home")
     }
     
     return (

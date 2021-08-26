@@ -4,7 +4,11 @@ import { createAppContainer } from "react-navigation";
 import Home from "../components/screens/home";
 import ReviewDetails from "../components/screens/reviewDetails";
 import ToDoScreen from "../components/screens/TodoScreen";
+import Login from '../components/screens/login'
 const screens = {
+    Login:{
+        screen:Login
+    },
     Home:{
         screen:Home
     },
